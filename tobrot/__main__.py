@@ -86,110 +86,110 @@ if __name__ == "__main__":
                 GLEECH_ZIP_COMMAND,
             ]
         )
-        & filters.chat(chats=AUTH_CHANNEL),
+        & filters.chat,
     )
     app.add_handler(incoming_message_handler)
     ##############################################################################
     incoming_telegram_download_handler = MessageHandler(
         down_load_media_f,
         filters=filters.command([TELEGRAM_LEECH_COMMAND, TELEGRAM_LEECH_UNZIP_COMMAND])
-        & filters.chat(chats=AUTH_CHANNEL),
+        & filters.chat,
     )
     app.add_handler(incoming_telegram_download_handler)
     ##############################################################################
     incoming_purge_message_handler = MessageHandler(
         incoming_purge_message_f,
-        filters=filters.command(["purge"]) & filters.chat(chats=AUTH_CHANNEL),
+        filters=filters.command(["purge"]) & filters.chat,
     )
     app.add_handler(incoming_purge_message_handler)
     ##############################################################################
     incoming_clone_handler = MessageHandler(
         g_clonee,
         filters=filters.command([f"{CLONE_COMMAND_G}"])
-        & filters.chat(chats=AUTH_CHANNEL),
+        & filters.chat,
     )
     app.add_handler(incoming_clone_handler)
     ##############################################################################
     incoming_size_checker_handler = MessageHandler(
         check_size_g,
-        filters=filters.command([f"{GET_SIZE_G}"]) & filters.chat(chats=AUTH_CHANNEL),
+        filters=filters.command([f"{GET_SIZE_G}"]) & filters.chat,
     )
     app.add_handler(incoming_size_checker_handler)
     ##############################################################################
     incoming_g_clear_handler = MessageHandler(
         g_clearme,
         filters=filters.command([f"{RENEWME_COMMAND}"])
-        & filters.chat(chats=AUTH_CHANNEL),
+        & filters.chat,
     )
     app.add_handler(incoming_g_clear_handler)
     ##############################################################################
     incoming_youtube_dl_handler = MessageHandler(
         incoming_youtube_dl_f,
         filters=filters.command([YTDL_COMMAND, GYTDL_COMMAND])
-        & filters.chat(chats=AUTH_CHANNEL),
+        & filters.chat,
     )
     app.add_handler(incoming_youtube_dl_handler)
     ##############################################################################
     incoming_youtube_playlist_dl_handler = MessageHandler(
         g_yt_playlist,
         filters=filters.command([PYTDL_COMMAND, GPYTDL_COMMAND])
-        & filters.chat(chats=AUTH_CHANNEL),
+        & filters.chat,
     )
     app.add_handler(incoming_youtube_playlist_dl_handler)
     ##############################################################################
     status_message_handler = MessageHandler(
         status_message_f,
         filters=filters.command([f"{STATUS_COMMAND}"])
-        & filters.chat(chats=AUTH_CHANNEL),
+        & filters.chat,
     )
     app.add_handler(status_message_handler)
     ##############################################################################
     cancel_message_handler = MessageHandler(
         cancel_message_f,
         filters=filters.command([f"{CANCEL_COMMAND_G}"])
-        & filters.chat(chats=AUTH_CHANNEL),
+        & filters.chat,
     )
     app.add_handler(cancel_message_handler)
     ##############################################################################
     exec_message_handler = MessageHandler(
         exec_message_f,
-        filters=filters.command(["exec"]) & filters.chat(chats=AUTH_CHANNEL),
+        filters=filters.command(["exec"]) & filters.chat,
     )
     app.add_handler(exec_message_handler)
     ##############################################################################
     eval_message_handler = MessageHandler(
         eval_message_f,
-        filters=filters.command(["eval"]) & filters.chat(chats=AUTH_CHANNEL),
+        filters=filters.command(["eval"]) & filters.chat,
     )
     app.add_handler(eval_message_handler)
     ##############################################################################
     rename_message_handler = MessageHandler(
         rename_tg_file,
-        filters=filters.command([f"{RENAME_COMMAND}"]) & filters.chat(chats=AUTH_CHANNEL),
+        filters=filters.command([f"{RENAME_COMMAND}"]) & filters.chat,
     )
     app.add_handler(rename_message_handler)
     ##############################################################################
     upload_document_handler = MessageHandler(
         upload_document_f,
         filters=filters.command([f"{UPLOAD_COMMAND}"])
-        & filters.chat(chats=AUTH_CHANNEL),
+        & filters.chat,
     )
     app.add_handler(upload_document_handler)
     ##############################################################################
     upload_log_handler = MessageHandler(
         upload_log_file,
-        filters=filters.command([f"{LOG_COMMAND}"]) & filters.chat(chats=AUTH_CHANNEL),
+        filters=filters.command([f"{LOG_COMMAND}"]) & filters.chat,
     )
     app.add_handler(upload_log_handler)
     ##############################################################################
     help_text_handler = MessageHandler(
         help_message_f,
-        filters=filters.command([f"{HELP_COMMAND}"]) & filters.chat(chats=AUTH_CHANNEL),
+        filters=filters.command([f"{HELP_COMMAND}"]) & filters.chat,
     )
     app.add_handler(help_text_handler)
     ##############################################################################
     new_join_handler = MessageHandler(
-        new_join_f, filters=~filters.chat(chats=AUTH_CHANNEL)
+        new_join_f, filters=~filters.chat
     )
     app.add_handler(new_join_handler)
     ##############################################################################
@@ -207,14 +207,14 @@ if __name__ == "__main__":
     save_thumb_nail_handler = MessageHandler(
         save_thumb_nail,
         filters=filters.command([f"{SAVE_THUMBNAIL}"])
-        & filters.chat(chats=AUTH_CHANNEL),
+        & filters.chat,
     )
     app.add_handler(save_thumb_nail_handler)
     ##############################################################################
     clear_thumb_nail_handler = MessageHandler(
         clear_thumb_nail,
         filters=filters.command([f"{CLEAR_THUMBNAIL}"])
-        & filters.chat(chats=AUTH_CHANNEL),
+        & filters.chat,
     )
     app.add_handler(clear_thumb_nail_handler)
     ##############################################################################
@@ -226,14 +226,14 @@ if __name__ == "__main__":
     upload_as_doc_handler = MessageHandler(
         upload_as_doc,
         filters=filters.command([f"{TOGGLE_DOC}"])
-        & filters.chat(chats=AUTH_CHANNEL),
+        & filters.chat,
     )
     app.add_handler(upload_as_doc_handler)
     ##############################################################################
     upload_as_video_handler = MessageHandler(
         upload_as_video,
         filters=filters.command([f"{TOGGLE_VID}"])
-        & filters.chat(chats=AUTH_CHANNEL),
+        & filters.chat,
     )
     app.add_handler(upload_as_video_handler)
     ##############################################################################
