@@ -88,7 +88,7 @@ async def button(bot, update: CallbackQuery):
                 cache_time=0,
             )
     elif cb_data == "fuckingdo":
-        if (update.from_user.id in AUTH_CHANNEL) or g:
+        if not (update.from_user.id in AUTH_CHANNEL) or g:
             await bot.answer_callback_query(
                 update.id, text="trying to delete...", show_alert=False
             )
